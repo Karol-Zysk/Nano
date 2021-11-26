@@ -50,14 +50,17 @@
   margin: auto;
   padding:  2%;
   color: white;
-  background-color: rgba(161, 13, 13, 0.87);
+  top: -10%;
+  background-color: rgba(0, 0, 0, 0.287);
   border: 5px solid white;
+  border-radius: 15%/70px;
 }
 
 .start-button:hover{
   cursor: grab;
   filter: drop-shadow(0 0 0.5rem rgba(243, 241, 242, 0.637));
-  border: 6px solid white;
+  border:  rgba(255, 255, 255, 0.336);
+  transition: linear 100ms;
 }
 
 .history{
