@@ -5,6 +5,9 @@ function ClearStartScreen() {
         console.log('dupa blada')
        const promise1 = new Promise((resolve , reject) =>{ logo.style.transform = "translateX(1200px)"
         logo.style.transition = "linear 0.7s"
+        setTimeout(() => {
+            
+        }, 300);
         startButton.style.transform = "translateX(-1200px)"
         startButton.style.transition = "linear 0.7s"})
         setTimeout(() => {
@@ -36,3 +39,23 @@ function circles2() {
     history2.classList.add("history2")
     container.appendChild(history2)
 }
+
+const createSnow = () => {
+	const snowflake = document.createElement('i')
+    const container = document.querySelector('.container')
+	snowflake.classList.add('snowflake')
+	snowflake.textContent = '.'
+
+	snowflake.style.left = Math.random() * window.innerWidth + 'px'
+	snowflake.style.top = Math.random() * 1000 + 'px'
+	snowflake.style.animationDuration = Math.random() * 2 + 10+ 's'
+	snowflake.style.opacity = Math.random()
+
+	container.append(snowflake)
+
+	setTimeout(() => {
+		snowflake.remove()
+	}, 12000)
+}
+
+setInterval(createSnow, 1)
