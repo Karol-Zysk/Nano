@@ -20,6 +20,7 @@
   background-color: black;
   display: flex;
   flex-direction: column;
+  
 
  
   
@@ -59,8 +60,9 @@
 .start-button:hover{
   cursor: grab;
   filter: drop-shadow(0 0 0.5rem rgba(243, 241, 242, 0.637));
-  border:  rgba(255, 255, 255, 0.336);
-  transition: linear 100ms;
+  /* border:  5px rgba(255, 255, 255, 0.336); */
+  transition: linear 150ms; 
+  
 }
 
 .history{
@@ -68,21 +70,21 @@
   font-size: 3vh;
   width: 100%;
   position: relative;
-  margin: auto;
+  margin: 0;
   color: white;
-  top: 0%;
   border: 4px solid white;
   padding: 1%;
   line-height: 200%;
   animation: slide-in-left 1170ms ease 1s 1 forwards ;
   animation-delay: 0ms;
+
 }
 .history2{
   font-family: 'Press Start 2P', cursive;
   font-size: 3vh;
   width: 100%;
   position: relative;
-  margin: auto;
+  margin: 0;
   
   color: white;
   top: 0%;
@@ -102,11 +104,106 @@ i.snowflake {
   animation: snow linear ;
 }
 
+.game-div{
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 60vh;
+  bottom: 0;
+  border: white solid 5px;
+  opacity: 0;
+  animation: opacity 2170ms ease 2s 1 forwards ;
+}
+
+.atom-gif{
+  background-image: url(./img/atom-gif.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: blur(0.15rem);
+  opacity: 0.3;
+  border-radius: 50%;
+  border: rgba(0, 0, 0, 0.466) solid 10px ;
+  transform: scale(0%);
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  animation: atom-scale 12000ms ease 1s 1 none ;
+}
+
+.electron-gif{
+  background-image: url(./img/electron.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: blur(0.15rem);
+  transform: scale(0%);
+  opacity: 1;
+  border-radius: 50%;
+  border: rgba(0, 0, 0, 0.466) solid 10px ;
+  transform: scale(0%);
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  animation: electron-scale 12000ms ease 2s 1 none ;
+}
+
+.scale-bar{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2vh;
+  width: 40vw;
+  height: auto;
+  text-align: center;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  border: solid 5px white;
+  left: 0;
+  right: 0;
+  color: white;
+  top: 0%;
+}
+
 
 @keyframes snow {
 	to {
 		transform: translateY(-110vh);
 	}
+}
+
+@keyframes atom-scale{
+  0%{
+  transform:scale(1%);
+  opacity: 0.5;
+  
+  }
+  60%{
+  transform:scale(30%);
+  opacity: 0.4;
+  }
+  100%{
+    transform:scale(2000%);
+    opacity: 0;
+    }
+}
+@keyframes electron-scale{
+  0%{
+  transform:scale(5%);
+  opacity: 1;
+  
+  }
+  60%{
+  transform:scale(50%);
+  opacity: 0.7;
+  }
+  100%{
+    transform:scale(2000%);
+    opacity: 0;
+    }
 }
 
 
@@ -162,4 +259,9 @@ i.snowflake {
   100%{
     transform: translatex(0vw)
   }
+}
+
+@keyframes opacity {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
 }
