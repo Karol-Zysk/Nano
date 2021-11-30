@@ -116,27 +116,27 @@ i.snowflake {
 }
 
 .atom-gif{
-  background-image: url(./img/atom-gif.gif);
+  background-image: url(./img/atom.png);
   background-repeat: no-repeat;
   background-size: contain;
-  filter: blur(0.15rem);
+  filter: contrast(100%);
   opacity: 0.3;
   border-radius: 50%;
   border: rgba(0, 0, 0, 0.466) solid 10px ;
-  transform: scale(0%);
+  transform: invert(1);
   top: 50%;
   left: 50%;
   width: 200px;
   height: 200px;
   position: relative;
-  animation: atom-scale 12000ms ease 1s 1 none ;
+  animation: atom-scale 12000ms ease-in-out 1s 1 none ;
 }
 
 .electron-gif{
   background-image: url(./img/electron.gif);
   background-repeat: no-repeat;
   background-size: contain;
-  filter: blur(0.15rem);
+  /* filter: blur(0.15rem); */
   transform: scale(0%);
   opacity: 1;
   border-radius: 50%;
@@ -147,7 +147,7 @@ i.snowflake {
   width: 200px;
   height: 200px;
   position: relative;
-  animation: electron-scale 12000ms ease 2s 1 none ;
+  animation: electron-scale 12000ms linear 2s 1 none ;
 }
 
 .scale-bar{
@@ -177,16 +177,22 @@ i.snowflake {
 
 @keyframes atom-scale{
   0%{
-  transform:scale(1%);
-  opacity: 0.5;
+    transform: rotate(0deg) scale(1%);;
+    filter: blur(0rem) hue-rotate(0deg) ;
+  
+  opacity: 1;
   
   }
-  60%{
-  transform:scale(30%);
-  opacity: 0.4;
+  50%{
+    filter: blur(0rem) hue-rotate(90deg);
+    transform:  rotate(480deg) scale(20%);
+  
+  opacity: 1;
   }
   100%{
-    transform:scale(2000%);
+   
+    filter: blur(4rem) hue-rotate(180deg);
+    transform: rotate(-960deg) scale(1000%) ;
     opacity: 0;
     }
 }
@@ -198,7 +204,7 @@ i.snowflake {
   }
   60%{
   transform:scale(50%);
-  opacity: 0.7;
+  opacity: 0.9;
   }
   100%{
     transform:scale(2000%);

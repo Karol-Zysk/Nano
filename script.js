@@ -79,7 +79,7 @@ function createGameDiv (){
     GameDiv.appendChild(atomGif)
    GameDiv.appendChild(scaleBar)
    scaleBar.classList.add('scale-bar')
-   scaleBar.innerText = "elo elo"
+   scaleBar.innerHTML = "3.1x10<sup>-11</sup>m"
     atomGif.classList.add('atom-gif')
     setTimeout(() => {
         atomGif.classList.remove('atom-gif')
